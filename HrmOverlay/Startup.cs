@@ -27,7 +27,7 @@ namespace HrmOverlay
             // Add AddRazorPages if the app uses Razor Pages.
             services.AddRazorPages();
 
-            services.AddHostedService<HostedService>();
+           // services.AddHostedService<HostedService>();
 
             // In production, the Vue files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

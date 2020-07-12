@@ -32,7 +32,7 @@ export default new Vuex.Store({
   actions: {
     load (context) {
       const connection = new signalR.HubConnectionBuilder()
-        .withUrl('http://localhost:5000/heartrateHub')
+        .withUrl('https://localhost:5001/heartrateHub')
         .build()
 
       connection.on('battey-level', data => {

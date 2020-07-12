@@ -135,7 +135,7 @@ namespace HrmOverlay.HostedServices
             await _browserHubContext.Clients.All.SendAsync("heartrate", FormatValueHeartRateMeasurement(args.CharacteristicValue));
         }
 
-        private async Task<IReadOnlyList<GattCharacteristic>> GetCharacteristics(GattDeviceService service)
+        public async Task<IReadOnlyList<GattCharacteristic>> GetCharacteristics(GattDeviceService service)
         {
             var accessStatus = await service.RequestAccessAsync();
             if (accessStatus == DeviceAccessStatus.Allowed)
