@@ -1,5 +1,5 @@
-using HrmOverlay.HostedServices;
 using HrmOverlay.Hubs;
+using HrmOverlay.Managers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices;
@@ -26,8 +26,9 @@ namespace HrmOverlay
 
             // Add AddRazorPages if the app uses Razor Pages.
             services.AddRazorPages();
+            services.AddMemoryCache();
+            services.AddSingleton<BleListener>();
 
-           // services.AddHostedService<HostedService>();
 
             // In production, the Vue files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
