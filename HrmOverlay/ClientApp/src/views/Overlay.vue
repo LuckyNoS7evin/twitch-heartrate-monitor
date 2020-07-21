@@ -7,7 +7,7 @@
         <div class="batteryBump"></div>
       </div>
     </div>
-    <div class="heart"><img src="Hearts-Vortex-Heart.png" ></div>
+    <div class="heart"><img :class="{ 'active': active }" src="Hearts-Vortex-Heart.png" ></div>
     <div class="heartrate" v-text="heartrate"></div>
     <MyChart :width="400" :height="100" />
   </div>
@@ -24,7 +24,8 @@ export default {
   computed: {
     ...mapGetters([
       'batteryPercentage',
-      'heartrate'
+      'heartrate',
+      'active'
     ])
   },
   methods: {
@@ -113,7 +114,10 @@ body, html, #app {
 img {
   width: 100%;
   display: block;
-  -webkit-animation-duration: 1s;
+}
+
+.active {
+  -webkit-animation-duration: 0.5s;
   -webkit-animation-name: heartbeat;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-direction: alternate;
