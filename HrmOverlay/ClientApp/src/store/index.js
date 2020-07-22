@@ -102,7 +102,7 @@ export default new Vuex.Store({
       context.commit('connection', connection)
 
       context.commit('timer', setInterval(() => {
-        if(!context.state.received) {
+        if (!context.state.received) {
           context.commit('heartrate', 0)
           context.commit('active', false)
         }
@@ -119,7 +119,6 @@ export default new Vuex.Store({
         .then(resp => {
           context.commit('listeners', resp.data)
         })
-    },
-    
+    }
   }
 })
